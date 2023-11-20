@@ -1,0 +1,35 @@
+# Configuration for Cog ⚙️
+# Reference: https://github.com/replicate/cog/blob/main/docs/yaml.md
+build:
+  gpu: true
+  system_packages:
+    - "libgl1-mesa-glx"
+    - "libglib2.0-0"
+    - "git"
+    - "wget"
+    - "git-lfs"
+  python_version: "3.9.16"
+  python_packages:
+    - "torch==2.0.1"
+    - "torchaudio==2.0.2"
+    - "torchvision==0.15.2"
+    - "decord==0.6.0"
+    - "diffusers==0.15.0"
+    - "imageio==2.29.0"
+    - "transformers==4.29.2"
+    - "xformers==0.0.20"
+    - "einops"
+    - "omegaconf"
+    - "tensorboard==2.15.1"
+    - "timm==0.9.10"
+    - "rotary-embedding-torch==0.3.5"
+    - "natsort==8.4.0"
+    - "accelerate"
+    - "av"
+
+  run:
+    - git lfs install
+    - git clone https://github.com/Vchitect/SEINE.git /SEINE
+   
+# predict.py defines how predictions are run on your model
+predict: "predict.py:Predictor"

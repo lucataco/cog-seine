@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import torch
+
+MODEL_CACHE = "pretrained"
+
+if not os.path.exists(MODEL_CACHE):
+    os.makedirs(MODEL_CACHE)
+
+os.system("wget -O pretrained/seine.pt https://huggingface.co/xinyuanc91/SEINE/resolve/main/seine.pt")
+os.system("git clone --branch fp16 https://huggingface.co/CompVis/stable-diffusion-v1-4 pretrained/stable-diffusion-v1-4")
