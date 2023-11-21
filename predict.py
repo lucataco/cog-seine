@@ -20,11 +20,11 @@ class Predictor(BasePredictor):
         image: Path = Input(description="Input image"),
         width: int = Input(
             description="Width",
-            default=240,
+            default=560,
         ),
         height: int = Input(
             description="Height",
-            default=560,
+            default=240,
         ),
         num_frames: int = Input(
             description="Number of frames",
