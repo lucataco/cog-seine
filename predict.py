@@ -63,7 +63,7 @@ class Predictor(BasePredictor):
             'save_path': "/src/results/",
             'model': 'UNet',
             'num_frames': num_frames,
-            'image_size': [width, height],
+            'image_size': [height, width],
             'use_fp16': True,
             'enable_xformers_memory_efficient_attention': True,
             'seed': str(seed),
