@@ -7,6 +7,7 @@ import sys
 import yaml
 import torch
 sys.path.extend(['/SEINE'])
+from PIL import Image
 import subprocess
 
 class Predictor(BasePredictor):
@@ -50,6 +51,12 @@ class Predictor(BasePredictor):
         if seed is None:
             seed = int.from_bytes(os.urandom(2), "big")
         print(f"Using seed: {seed}")
+
+        img = Image.open(image)
+        if img.mode == "RGBA":
+            img = img.convert("RGB")
+            image = "/tmp/input.jpg"
+            img.save(image)
         
         # Clean up past runs (just in case)
         os.system("rm -rf /src/results/")

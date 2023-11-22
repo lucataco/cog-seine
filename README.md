@@ -10,7 +10,7 @@ Follow the [model pushing guide](https://replicate.com/docs/guides/push-a-model)
 
 Download weights first
 
-    cog run python script/download_weights.py
+    cog run script/download-weights
 
 Then for predictions,
 
